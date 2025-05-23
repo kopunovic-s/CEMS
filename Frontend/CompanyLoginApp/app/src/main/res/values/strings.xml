@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CompanyLoginApp</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="roles_array">
+        <item>EXECUTIVE</item>
+        <item>OWNER</item>
+        <item>MANAGER</item>
+        <item>EMPLOYEE</item>
+    </string-array>
+</resources>

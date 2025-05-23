@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_company_edit"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0033EE"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextColor="@android:color/white" />
+
+    <!-- Image upload section -->
+    <ImageView
+        android:id="@+id/company_image_view"
+        android:layout_marginTop="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_placeholder_image"
+        android:contentDescription="Company Image"
+        android:background="@android:color/darker_gray"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/upload_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Image"
+        android:layout_gravity="center"
+        android:backgroundTint="#0033EE"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Non-editable ID field -->
+    <EditText
+        android:id="@+id/edit_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+        android:inputType="none"
+        android:focusable="false"
+        android:clickable="false"
+        android:longClickable="false"/>
+
+    <!-- Name input field -->
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"/>
+
+    <!-- EIN input field -->
+    <EditText
+        android:id="@+id/edit_ein"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="EIN"/>
+
+    <!-- Street Address input field -->
+    <EditText
+        android:id="@+id/edit_street_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Street Address"/>
+
+    <!-- City input field -->
+    <EditText
+        android:id="@+id/edit_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"/>
+
+    <!-- State input field -->
+    <EditText
+        android:id="@+id/edit_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="State"/>
+
+    <!-- Zip Code input field -->
+    <EditText
+        android:id="@+id/edit_zip_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Zip Code"/>
+
+    <!-- Country input field -->
+    <EditText
+        android:id="@+id/edit_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Country"/>
+
+
+    <!-- Update button -->
+    <Button
+        android:id="@+id/update_company_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#0033EE"
+        android:text="Update Company"/>
+
+    <Button
+        android:id="@+id/delete_company_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint= "#FF0000"
+        android:text="Delete Company"/>
+</LinearLayout>

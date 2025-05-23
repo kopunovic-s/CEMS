@@ -1,0 +1,114 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    namespace 'com.example.companyloginapp'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.companyloginapp"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            testCoverageEnabled true // ✅ Enables coverage for debug builds
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+// ✅ Jacoco coverage report task
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.8.10" // latest as of 2025
+}
+
+task jacocoTestReport(type: JacocoReport, dependsOn: ['createDebugCoverageReport']) {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports"
+
+    reports {
+        html.required.set(true)
+        xml.required.set(true)
+        csv.required.set(false)
+    }
+
+    def fileFilter = ['**/R.class',
+                      '**/R$*.class',
+                      '**/BuildConfig.*',
+                      '**/Manifest*.*',
+                      '**/*Test*.*',
+                      'android/**/*.*']
+
+    def debugTree = fileTree(
+            dir: "$buildDir/intermediates/javac/debug/classes",
+            excludes: fileFilter
+    )
+
+    classDirectories.setFrom(files([debugTree]))
+    sourceDirectories.setFrom(files(["src/main/java"]))
+    executionData.setFrom(fileTree(dir: "$buildDir", includes: [
+            "outputs/code_coverage/**/*.ec", "jacoco/testDebugUnitTest.exec"
+    ]))
+}
+
+dependencies {
+    // Android libraries
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation libs.androidx.activity
+    implementation "androidx.fragment:fragment:1.8.6"
+
+    // WebSocket library
+    implementation 'org.java-websocket:Java-WebSocket:1.5.1'
+
+    // JSON
+    implementation 'org.json:json:20210307'
+
+    // Charts
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    // Testing
+    testImplementation libs.junit
+    testImplementation 'junit:junit:4.13.2'
+
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
+}
