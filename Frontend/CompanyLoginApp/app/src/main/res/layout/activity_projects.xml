@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:text="Projects"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Project Name Input -->
+        <EditText
+            android:id="@+id/project_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Project Name"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Due Date Input -->
+        <EditText
+            android:id="@+id/project_due_date_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Due Date (YYYY-MM-DD)"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none"
+            android:layout_marginBottom="8dp" />
+
+
+        <!-- Assigned Users Input -->
+        <AutoCompleteTextView
+            android:id="@+id/project_assigned_users_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Assign Users (tap to pick)"
+            android:inputType="textEmailAddress"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:clickable="true"
+            android:layout_marginBottom="16dp" />
+
+
+
+        <!-- Visibility Checkbox -->
+        <CheckBox
+            android:id="@+id/visibility_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visible to Entire Company"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Action Buttons -->
+        <Button
+            android:id="@+id/add_project_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Project" />
+
+        <Button
+            android:id="@+id/fetch_projects_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fetch All Projects"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/fetch_active_projects_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fetch Active Projects"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/fetch_inactive_projects_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fetch Inactive Projects"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/toggle_project_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toggle Active/Inactive"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/delete_project_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Selected Project"
+            android:layout_marginTop="8dp" />
+
+        <!-- Project List -->
+        <ListView
+            android:id="@+id/projects_list"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:dividerHeight="1dp"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+</ScrollView>

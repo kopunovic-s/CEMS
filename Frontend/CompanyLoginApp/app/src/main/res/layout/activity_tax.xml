@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".TaxActivity">
+
+    <!-- Toolbar (optional for consistent top navigation) -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_tax"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!-- Input for Tax Year -->
+    <EditText
+        android:id="@+id/input_tax_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Tax Year (e.g. 2024)"
+        android:inputType="number"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Fetch Button -->
+    <Button
+        android:id="@+id/button_fetch_tax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fetch W-2 Info"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Scrollable W-2 Text Info Display -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#EEEEEE"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tax_info_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="W-2 Information will appear here..."
+            android:textSize="16sp"
+            android:textColor="#000000" />
+    </ScrollView>
+
+    <!-- Download PDF Button -->
+    <Button
+        android:id="@+id/button_download_pdf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Download PDF"
+        android:layout_marginTop="12dp" />
+</LinearLayout>

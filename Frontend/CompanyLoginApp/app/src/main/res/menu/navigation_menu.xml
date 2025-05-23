@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_employees"
+        android:title="Employees" />
+
+    <item
+        android:id="@+id/nav_time_card"
+        android:title="Time Card" />
+
+    <item
+        android:id="@+id/nav_project_management"
+        android:title="Project Management" />
+
+    <!-- This is the new Projects item -->
+    <item
+        android:id="@+id/nav_projects"
+        android:title="Projects" />
+
+    <item
+        android:id="@+id/nav_tasks"
+        android:title="Tasks" />
+
+    <item
+        android:id="@+id/nav_analytics"
+        android:title="Analytics" />
+
+    <item
+        android:id="@+id/nav_payroll"
+        android:title="Payroll" />
+    <item
+        android:id="@+id/nav_schedule"
+        android:title="Schedule" />
+
+    <item
+        android:id="@+id/nav_live_time_card"
+        android:title="Live Time Card"/>
+
+    <item
+        android:id="@+id/nav_store"
+        android:title="Store"/>
+    <item
+        android:id="@+id/nav_tax"
+        android:title="W-2 Tax Form" />
+
+    <item
+        android:id="@+id/nav_analytic_reports"
+        android:title="Analytic Reports"/>
+
+    <item
+        android:id="@+id/nav_sign_out"
+        android:title="Sign Out" />
+</menu>
